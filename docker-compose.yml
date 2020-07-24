@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    environment:
+      - "SECRET_KEY=j*cu/&nI]hpG&s|#Ag1Q"
+    working_dir: /usr/src/app/newsserver
+    command: python manage.py runserver 0.0.0.0:8000
+
